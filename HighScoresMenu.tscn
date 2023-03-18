@@ -69,7 +69,7 @@ text = "High Scores"
 align = 1
 valign = 1
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="."]
 margin_left = 28.0
 margin_top = 483.0
 margin_right = 306.0
@@ -81,7 +81,7 @@ custom_styles/pressed = ExtResource( 8 )
 custom_styles/focus = ExtResource( 8 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = ExtResource( 8 )
-text = "Exit"
+text = "Go Back"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_left = 218.0
@@ -90,7 +90,7 @@ margin_right = 990.0
 margin_bottom = 473.0
 columns = 2
 
-[node name="Title2" type="Label" parent="GridContainer"]
+[node name="PlayerName" type="Label" parent="GridContainer"]
 margin_right = 384.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 384, 64 )
@@ -99,7 +99,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Username1"
 valign = 1
 
-[node name="Title" type="Label" parent="GridContainer"]
+[node name="PlayerScore" type="Label" parent="GridContainer"]
 margin_left = 388.0
 margin_right = 772.0
 margin_bottom = 64.0
