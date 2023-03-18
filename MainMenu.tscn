@@ -75,6 +75,32 @@ Shooter"
 align = 1
 valign = 1
 
+[node name="PlayerNameLabel" type="Label" parent="."]
+margin_left = 27.0
+margin_top = 93.0
+margin_right = 411.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 384, 64 )
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = SubResource( 1 )
+text = "Username"
+align = 1
+valign = 1
+
+[node name="LoginButton" type="Button" parent="."]
+margin_left = 23.0
+margin_top = 21.0
+margin_right = 301.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 256, 64 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Sign In"
+
 [node name="Buttons" type="VBoxContainer" parent="."]
 margin_left = 384.0
 margin_top = 256.0
@@ -128,6 +154,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="LoginButton" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Buttons/HighScoresButton" to="." method="_on_HighScoresButton_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]

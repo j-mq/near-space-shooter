@@ -99,14 +99,15 @@ custom_styles/normal = ExtResource( 8 )
 text = "Go Back"
 
 [node name="ScoresGrid" type="GridContainer" parent="."]
-margin_left = 218.0
-margin_top = 99.0
-margin_right = 990.0
-margin_bottom = 473.0
+margin_left = 305.0
+margin_top = 101.0
+margin_right = 1701.0
+margin_bottom = 475.0
+rect_scale = Vector2( 0.5, 0.5 )
 columns = 2
 
 [node name="PlayerName" type="Label" parent="ScoresGrid"]
-margin_right = 384.0
+margin_right = 696.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 384, 64 )
 size_flags_horizontal = 3
@@ -115,8 +116,8 @@ text = "Username1"
 valign = 1
 
 [node name="PlayerScore" type="Label" parent="ScoresGrid"]
-margin_left = 388.0
-margin_right = 772.0
+margin_left = 700.0
+margin_right = 1396.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 384, 64 )
 size_flags_horizontal = 3

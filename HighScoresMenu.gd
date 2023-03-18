@@ -33,13 +33,13 @@ func _ready():
 				var temp = high_scores[i]
 				high_scores[i] = high_scores[indexOfLargest]
 				high_scores[indexOfLargest] = temp
-
+		
 		for score in high_scores:
 			var name_label = player_name_label.duplicate()
 			name_label.set_text(score.username)
 			scores_grid.add_child(name_label)
 			name_label.show()
-
+			
 			var score_label = player_score_label.duplicate()
 			score_label.set_text(str(score.value))
 			scores_grid.add_child(score_label)
