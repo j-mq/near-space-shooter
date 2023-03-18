@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Hazards/SmallAsteroids/SmallAsteroid01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Hazards/SmallAsteroids/SmallAsteroid02.tscn" type="PackedScene" id=2]
+[ext_resource path="res://AsteroidDecorations.gd" type="Script" id=3]
+[ext_resource path="res://UI/kenvector_future.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Backgrounds/blue.png" type="Texture" id=5]
+[ext_resource path="res://Hazards/BigAsteroids/BigAsteroid01.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hazards/BigAsteroids/BigAsteroid02.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/ButtonNormalBlue.tres" type="StyleBox" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 576.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AsteroidDecorations" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BigAsteroid01" parent="AsteroidDecorations" instance=ExtResource( 6 )]
+position = Vector2( 942, 496 )
+use_initial_velocity = true
+initial_velocity = Vector2( 0.2, -0.5 )
+
+[node name="BigAsteroid02" parent="AsteroidDecorations" instance=ExtResource( 7 )]
+position = Vector2( 240, 308 )
+use_initial_velocity = true
+initial_velocity = Vector2( 0.1, 0.3 )
+
+[node name="SmallAsteroid01" parent="AsteroidDecorations" instance=ExtResource( 1 )]
+position = Vector2( 130, 142 )
+use_initial_velocity = true
+initial_velocity = Vector2( -0.2, -0.07 )
+
+[node name="SmallAsteroid02" parent="AsteroidDecorations" instance=ExtResource( 2 )]
+position = Vector2( 61, 293 )
+use_initial_velocity = true
+initial_velocity = Vector2( -0.22, 0.08 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 381.0
+margin_top = 5.0
+margin_right = 1021.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 384, 64 )
+custom_fonts/font = SubResource( 1 )
+text = "High Scores"
+align = 1
+valign = 1
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 28.0
+margin_top = 483.0
+margin_right = 306.0
+margin_bottom = 547.0
+rect_min_size = Vector2( 256, 64 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = ExtResource( 8 )
+text = "Exit"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 218.0
+margin_top = 99.0
+margin_right = 990.0
+margin_bottom = 473.0
+columns = 2
+
+[node name="Title2" type="Label" parent="GridContainer"]
+margin_right = 384.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 384, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Username1"
+valign = 1
+
+[node name="Title" type="Label" parent="GridContainer"]
+margin_left = 388.0
+margin_right = 772.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 384, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "12345"
+align = 2
+valign = 1

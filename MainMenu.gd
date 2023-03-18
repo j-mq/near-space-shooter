@@ -5,3 +5,7 @@ func _on_StartButton_pressed():
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
+
+
+func _on_HighScoresButton_pressed():
+	get_tree().change_scene("res://HighScoresMenu.tscn")

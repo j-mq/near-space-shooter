@@ -14,11 +14,11 @@
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=2]
-
 [sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 8 )
@@ -91,36 +91,49 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="Buttons"]
-margin_top = 46.0
-margin_right = 256.0
-margin_bottom = 110.0
+margin_right = 278.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 256, 64 )
+custom_fonts/font = SubResource( 3 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/focus = ExtResource( 3 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = ExtResource( 3 )
-custom_fonts/font = SubResource( 3 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExitButton" type="Button" parent="Buttons"]
-margin_top = 146.0
-margin_right = 256.0
-margin_bottom = 210.0
+[node name="HighScoresButton" type="Button" parent="Buttons"]
+margin_top = 100.0
+margin_right = 278.0
+margin_bottom = 164.0
 rect_min_size = Vector2( 256, 64 )
+custom_fonts/font = SubResource( 3 )
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/focus = ExtResource( 3 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = ExtResource( 3 )
+text = "High Scores"
+
+[node name="ExitButton" type="Button" parent="Buttons"]
+margin_top = 200.0
+margin_right = 278.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 3 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = ExtResource( 3 )
 text = "Exit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Buttons/HighScoresButton" to="." method="_on_HighScoresButton_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]
