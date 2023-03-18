@@ -74,9 +74,6 @@ text = "Space
 Shooter"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 margin_left = 384.0
@@ -86,9 +83,6 @@ margin_bottom = 512.0
 rect_min_size = Vector2( 256, 256 )
 custom_constants/separation = 36
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StartButton" type="Button" parent="Buttons"]
 margin_right = 278.0
