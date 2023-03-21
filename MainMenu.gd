@@ -58,7 +58,9 @@ func get_nfts(args):
 			nft_label.set_text(nft.token_id)
 			nfts_grid.add_child(nft_label)
 			nft_label.show()
-	
+			
+	if result.has("error"):
+		print('some error happened')
 
 func _on_user_signed_out(wallet: WalletConnection):
 	login_button.set_text("Sign In")
