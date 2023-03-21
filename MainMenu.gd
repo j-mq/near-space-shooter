@@ -2,8 +2,13 @@ extends Node2D
 
 const CONTRACT_NAME = "dev-1679115038294-40250639006395"
 
+const NFT_CONTRACT = "nft.examples.testnet"
+
 onready var login_button = $LoginButton
 onready var player_name_label = $PlayerNameLabel
+onready var nfts_grid = $NFTsGrid
+onready var owned_nft = $NFTsGrid/OwnedNFT
+
 
 #Check if connection exists, if not, connnect to testnet
 var config = {
@@ -15,6 +20,8 @@ var wallet_connection
 
 func _ready():
 	player_name_label.hide()
+	owned_nft.hide()
+	
 	if Near.near_connection == null:
 		Near.start_connection(config)
 	
@@ -22,13 +29,36 @@ func _ready():
 	wallet_connection = WalletConnection.new(Near.near_connection)
 	wallet_connection.connect("user_signed_in", self, "_on_user_signed_in")
 	wallet_connection.connect("user_signed_out", self, "_on_user_signed_out")
+	
 	if wallet_connection.is_signed_in():
 		_on_user_signed_in(wallet_connection)
 
 func _on_user_signed_in(wallet: WalletConnection):
 	login_button.set_text("Sign Out")
 	player_name_label.show()
-	player_name_label.set_text(wallet.get_account_id())
+	
+	#Set name on label
+	var accountId = wallet.get_account_id()
+	player_name_label.set_text(accountId)
+	
+	#get nfts data
+	var args = {"account_id": accountId}
+	get_nfts(args)
+
+func get_nfts(args):
+	var result = Near.call_view_method(NFT_CONTRACT, "nft_tokens_for_owner", args)
+	if result is GDScriptFunctionState:
+		result = yield(result, "completed")
+		print(result.data)
+		var json_data = JSON.parse(result.data)
+		var nfts: Array = json_data.result
+		
+		for nft in nfts:
+			var nft_label = owned_nft.duplicate()
+			nft_label.set_text(nft.token_id)
+			nfts_grid.add_child(nft_label)
+			nft_label.show()
+	
 
 func _on_user_signed_out(wallet: WalletConnection):
 	login_button.set_text("Sign In")

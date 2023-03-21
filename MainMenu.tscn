@@ -84,7 +84,22 @@ rect_min_size = Vector2( 384, 64 )
 rect_scale = Vector2( 0.25, 0.25 )
 custom_fonts/font = SubResource( 1 )
 text = "Username"
-align = 1
+valign = 1
+
+[node name="NFTsGrid" type="GridContainer" parent="."]
+margin_left = 27.0
+margin_top = 112.0
+margin_right = 663.0
+margin_bottom = 462.0
+rect_scale = Vector2( 0.5, 0.5 )
+columns = 2
+
+[node name="OwnedNFT" type="Label" parent="NFTsGrid"]
+margin_right = 384.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 384, 64 )
+custom_fonts/font = SubResource( 1 )
+text = "Owned NFTs"
 valign = 1
 
 [node name="LoginButton" type="Button" parent="."]
