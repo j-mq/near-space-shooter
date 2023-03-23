@@ -102,6 +102,11 @@ custom_fonts/font = SubResource( 1 )
 text = "Owned NFTs"
 valign = 1
 
+[node name="NFTPicture" type="TextureRect" parent="NFTsGrid"]
+margin_left = 388.0
+margin_right = 538.0
+margin_bottom = 150.0
+
 [node name="LoginButton" type="Button" parent="."]
 margin_left = 23.0
 margin_top = 21.0
